@@ -1,0 +1,17 @@
+[package]
+name = "hiveos_pleb_cli"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.5.0", features = ["derive"] }
+native-tls = { version = "0.2.11" }
+ureq = { version = "*", features = ["json", "charset"] }
+rustls = "0.23.1"
+webpki-roots = "0.26.1"
+jammdb = "0.11.0"
+serde = { version = "1.0.196", features = ["derive"] }
+rmp-serde = "1.1.2"
+json = { version = "0.12.4" }
