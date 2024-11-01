@@ -1,16 +1,17 @@
-use clap::{Args, Parser, Subcommand};
+use clap::{Parser, Subcommand};
 
 use crate::args::account_args::AccountCommand;
 use crate::args::farm_args::FarmCommand;
 use crate::args::flight_sheet_args::FlightSheetCommand;
+use crate::args::overclock_args::OverclockCommand;
 use crate::args::wallet_args::WalletCommand;
 use crate::args::worker_args::WorkerCommand;
-
-pub mod wallet_args;
 pub mod account_args;
-pub mod flight_sheet_args;
-pub mod worker_args;
 pub mod farm_args;
+pub mod flight_sheet_args;
+pub mod overclock_args;
+pub mod wallet_args;
+pub mod worker_args;
 
 /// The HiveOS main tree arguments.
 #[derive(Debug, Parser)]
@@ -32,4 +33,6 @@ pub enum EntityType {
     FlightSheet(FlightSheetCommand),
     /// CRUD operations for a given HiveOS Wallet.
     Wallet(WalletCommand),
+    /// CRUD operations for Overclocking Templates.
+    Overclock(OverclockCommand),
 }

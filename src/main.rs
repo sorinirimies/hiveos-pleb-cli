@@ -1,4 +1,5 @@
 use clap::Parser;
+use ops::overclock_ops::{self, handle_overclock_command};
 
 use crate::args::{EntityType, HiveOsArgs};
 use crate::ops::account_ops::handle_account_command;
@@ -22,5 +23,6 @@ fn handle_hive_os_cli_args(args: HiveOsArgs) {
         EntityType::Worker(worker) => handle_worker_command(worker),
         EntityType::FlightSheet(flight_sheet) => handle_flight_sheet_command(flight_sheet),
         EntityType::Wallet(wallet) => handle_wallet_command(wallet),
+        EntityType::Overclock(overclock) => handle_overclock_command(overclock),
     }
 }

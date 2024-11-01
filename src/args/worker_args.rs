@@ -9,5 +9,10 @@ pub struct WorkerCommand {
 
 #[derive(Debug, Subcommand)]
 pub enum WorkerSubcommand {
-    Show
+    Show(ShowWorker),
+}
+#[derive(Debug, Args)]
+pub struct ShowWorker {
+    /// Show the worker for a given username
+    pub username: String,
 }
