@@ -123,12 +123,8 @@ pub fn get_account_bearer_token(username: String) -> Result<UserAccount, jammdb:
     if let Some(data) = accounts_bucket.get(&username) {
         if data.is_kv() {
             let kv = data.kv();
-
             // deserialize into a user struct
             let db_user: UserAccount = rmp_serde::from_slice(kv.value()).unwrap();
-            print!("User email is: {:?}", &db_user.email);
-            print!("User name is: {:?}", &db_user.username);
-            print!("User account is: {:?}", &db_user.account_token);
             Ok(db_user)
         } else {
             Err(jammdb::Error::KeyValueMissing)
